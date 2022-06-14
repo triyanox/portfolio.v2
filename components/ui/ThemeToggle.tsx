@@ -16,7 +16,7 @@ const ThemeToggle = () => {
     >
       {mounted && (
         <IconButton
-          aria-label="Theme Toggle"
+          aria="Theme Toggle"
           onclick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           icon={
             <WiMoonAltNew className="text-3xl text-white dark:text-black" />
