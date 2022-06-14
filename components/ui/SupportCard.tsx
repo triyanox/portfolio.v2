@@ -11,7 +11,7 @@ const SupportCard = (props: Props) => {
     <div className="mt-8 flex flex-col md:flex-row items-center font-semibold justify-center gap-8 text-xl rounded-2xl  py-8 px-8  w-full">
       Spread the word !
       <Link
-        href={`https://twitter.com/intent/tweet?url=https://achaq.codes/${props.link}`}
+        href={`https://twitter.com/intent/tweet?url=https://achaq.codes/blog/${props.link}`}
         passHref
       >
         <a target="_blank">
