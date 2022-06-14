@@ -10,7 +10,7 @@ type FilledButton = {
 export const FilledButton = (props: FilledButton) => {
   return (
     <button
-      arian-label={props.aria}
+      aria-label={props.aria}
       className="rounded-full bg-black px-6 py-2 text-lg font-bold text-white ring-zinc-300 transition-all duration-300 hover:scale-105 hover:ring-4 active:scale-95 dark:bg-white dark:text-black dark:ring-zinc-700 md:text-xl"
     >
       {props.text}
@@ -20,7 +20,7 @@ export const FilledButton = (props: FilledButton) => {
 export const IconFilledButton = (props: FilledButton) => {
   return (
     <button
-      arian-label={props.aria}
+      aria-label={props.aria}
       className="flex items-center justify-center gap-2 rounded-2xl bg-black px-4 py-2 text-lg font-bold text-white ring-zinc-300 transition-all duration-300 hover:ring-4 active:scale-95 dark:bg-white dark:text-black dark:ring-zinc-700 md:text-xl"
     >
       {props.icon}
@@ -32,7 +32,7 @@ export const IconFilledButton = (props: FilledButton) => {
 export const UnFilled = (props: FilledButton) => {
   return (
     <button
-      arian-label={props.aria}
+      aria-label={props.aria}
       className="rounded-full px-2 py-1 text-lg text-black  transition-all duration-300 dark:text-white md:text-xl"
     >
       {props.text}
@@ -43,7 +43,7 @@ export const UnFilled = (props: FilledButton) => {
 export const ActionButton = (props: FilledButton) => {
   return (
     <button
-      arian-label={props.aria}
+      aria-label={props.aria}
       className="rounded-full bg-black px-8 py-3 text-lg font-bold text-white ring-0 ring-zinc-300 transition-all duration-300 hover:scale-105 hover:ring-4 active:scale-95 dark:bg-white dark:text-black dark:ring-zinc-700"
     >
       {props.text}
@@ -60,7 +60,7 @@ type IconButton = {
 export const IconButton = (props: IconButton) => {
   return (
     <button
-      arian-label={props.aria}
+      aria-label={props.aria}
       onClick={props.onclick}
       className="rounded-full bg-black p-2 text-lg font-bold text-white ring-zinc-300 transition-all duration-300 hover:scale-105 hover:ring-4 active:scale-95 dark:bg-white dark:text-black dark:ring-zinc-700 md:text-xl"
     >
