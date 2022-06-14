@@ -1,68 +1,46 @@
-import { BsFolderFill } from "react-icons/bs/index.js";
-import { SiGithub } from "react-icons/si/index.js";
-import { SiOpenlayers } from "react-icons/si/index.js";
-import Link from "next/link";
-import { ReactNode, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { SiGithub } from 'react-icons/si/index.js'
+import { SiOpenlayers } from 'react-icons/si/index.js'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 interface Props {
-  title: string;
-  source: string;
-  preview: string;
-  stack: (() => JSX.Element)[];
-  description: string;
+  title: string
+  source: string
+  preview: string
+  stack: (() => JSX.Element)[]
+  description: string
+}
+
+const item = {
+  show: {
+    translateY: 0,
+    scale: 1,
+    opacity: 1,
+    transformOrigin: 'bottom',
+    transition: {
+      duration: 0.5,
+      dump: 0.8,
+      stiffness: 100,
+      ease: 'easeInOut',
+    },
+  },
+  hidden: {
+    translateY: 100,
+    scale: 0,
+    opacity: 0,
+  },
 }
 
 const ProjectCard = (props: Props) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-    return () => {
-      controls.stop();
-    };
-  }, [controls, inView]);
-
   return (
     <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={{
-        visible: {
-          translateY: 0,
-          scale: 1,
-          opacity: 1,
-          transformOrigin: "bottom",
-          transition: {
-            duration: 0.5,
-            dump: 0.8,
-            stiffness: 100,
-            ease: "easeInOut",
-          },
-        },
-        hidden: {
-          translateY: 100,
-          scale: 0.6,
-          opacity: 0.2,
-          transformOrigin: "bottom",
-          transition: {
-            duration: 0.5,
-            dump: 0.8,
-            stiffness: 100,
-            ease: "easeInOut",
-          },
-        },
-      }}
+      variants={item}
       className="flex w-full items-center justify-start gap-4 rounded-[30px] "
     >
-      <div className="relative flex h-full w-full flex-col justify-center gap-2 rounded-[30px]  p-8  backdrop-blur-2xl bg-zinc-50  dark:bg-zinc-900 ">
+      <div className="relative flex h-full w-full flex-col justify-center gap-2 rounded-[30px]  bg-zinc-50  p-8 backdrop-blur-2xl  dark:bg-zinc-900 ">
         <div className="flex flex-col gap-4 ">
           <div className="grid grid-cols-2 items-start justify-between">
-            <h1 className="text-2xl  font-semibold dark:text-white text-black md:text-2xl ">
+            <h1 className="text-2xl  font-semibold text-black dark:text-white md:text-2xl ">
               {props.title}
             </h1>
 
@@ -107,22 +85,22 @@ const ProjectCard = (props: Props) => {
               )}
             </div>
           </div>
-          <div className="mb-1 flex flex-col  justify-start text-md   text-gray-600 dark:text-gray-400 md:text-lg">
+          <div className="text-md mb-1 flex  flex-col justify-start   text-gray-600 dark:text-gray-400 md:text-lg">
             {props.description}
           </div>
           <div className="flex flex-row justify-start gap-3  text-2xl text-gray-600 dark:text-gray-400 md:text-3xl">
             {props.stack.map((item, i) => {
               return (
-                <div className="flex justify-center items-center" key={i}>
+                <div className="flex items-center justify-center" key={i}>
                   {item()}
                 </div>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard
