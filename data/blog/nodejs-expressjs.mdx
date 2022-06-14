@@ -1,0 +1,377 @@
+---
+title: APIs with Node.js and Express
+date: Feb 16 2022
+description: Build your first REST API with nodejs and express
+image: "/static/images/nodejs-expressjs.png"
+author: "Mohamed Achaq"
+tags:
+  - nodejs
+  - express
+  - rest
+  - api
+---
+
+<Imagecomponent
+  src={`/static/images/nodejs-expressjs.png`}
+  alt={`APIs with Node.js and Express`}
+  width={1920}
+  height={1080}
+/>
+
+An application programming interface or API, is a technology to share information
+between computers or between computer programs, REST or Representational state transfer
+is a software architectural style that defines a set of constraints make the behavior
+of your API predictable.
+
+To build your first API first you need to understand how a REST API works, a restful API
+resources into a banche of unique URIs **Uniform Resource Identifier** to differentiate various
+data resources on the server.
+
+A client can get data from a resource by sending an HTTP request, this request contains
+the following elements:
+
+1. A request line that contains 3 elements:
+   - a method or an **HTTP** verb to tells the server what the client is trying to do, this method can be
+     **GET** to get the data, **POST** to create new data, **PUT** to update the data and **DELETE** to delete
+     the data .
+   - a path to indicate where the resource is located .
+   - HTTP version or the versions of the HTTP protocol used,remember the client and server might use different versions of the HTTP protocol,
+     Both client and server must state the HTTP version of their request or response in the first line of their message.
+2. A series of HTTP headers, or header fields, used to provide the recipient with information about the message.
+3. A message body, if needed, and it contains the entity body, which can be in its original state,
+   or can be encoded in some way for transport, such as by being broken into chunks (chunked transfer-coding).
+
+This HTTP request will be something like this :
+
+```:http
+GET /static/index.html HTTP/1.1
+Accept-Language: ar, en
+If-Modified-Since: Wed, 16 Feb 2022 15:39:02 GMT
+```
+
+The server recives the request and executes some code and sends back an HTTP response
+to the user, this response contains the following elements:
+
+1. A status line, and it consists of three items:
+
+   - HTTP version or the versions of the HTTP protocol used.
+   - A status code contains 3 degits, indicates the result of the request. A status code in the
+     200 level means Successful in 300 level
+     means Redirection in 400 means Client error and in 500 means Server error .
+   - A reason phrase or a status text to summarizes the meaning of the status code.
+
+2. HTTP headers, contain informations that a client can use to find out more about the response.
+3. A message body or response body, For a response to a successful request, the message body contains either the payload of data requested by the client,
+   or some information about the status of the action requested by the client. And remember that if the client used the **HEAD**
+   method the request body is not required .
+
+This HTTP response may look like this :
+
+```:http
+HTTP/1.1 200 OK
+Date: Wed, 16 Feb 2022 15:39:02 GMT
+server: nginx/1.21.5
+Content-type: image/jpg
+```
+
+Now you understand how REST APIs and HTTP work, let go to fun part and start making your
+first API with **nodejs** and **expressjs**!
+
+## What is Nodejs ?
+
+When **Javascript** just got released the only way to execute **Javascript** code is inside a browser,
+then **Nodejs** was created by Ryan Dahl and released in 2009. **Nodejs** is an open-source, cross-platform, back-end JavaScript
+runtime environment built on top of **Google's** **V8** engine and executes JavaScript code in the server.
+
+With **Nodejs** we handle incoming HTTP requests by using the HTTP module to create a server and listen to events
+on different routes like this :
+
+```js:index.js
+const http = require('http')
+const fs = require('fs').promises
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.write('This is the Homepage')
+    res.end()
+  }
+  if (req.url === '/api/users') {
+    res.write(
+      JSON.stringify([
+        { id: 1, name: 'Mohamed Achaq' },
+        { id: 2, name: 'Bojack Horseman' },
+        { id: 3, name: 'Rick Sanchez' },
+      ])
+    )
+    res.end()
+  }
+  if (req.url === '/index.html') {
+    fs.readFile(__dirname + '/index.html').then((contents) => {
+      res.setHeader('Content-Type', 'text/html')
+      res.writeHead(200)
+      res.end(contents)
+    })
+  }
+})
+server.listen(5000)
+console.log('listening on port 5000')
+```
+
+In this example we have required 2 modules the **http** module and the **fs** module which is the file system module
+built in **Nodejs** core modules to read and serve an **HTML** file.
+
+Then we have created an http server which takes callback function as an argument, and this callback function has two
+parametres, the request and the response, then to handle each route we defined an if statement to handle the request and send
+back a response to the client .
+
+Then we called the listen method to listen on port **5000**
+
+As you can see using the building blocks provided by **Nodejs** is not the efficient way to create a backend server,
+because this is low level stuff but it's good to know this stuff, and to build real world application we use a framework
+like **expresjs** which is the most popular !
+
+## What is Express ?
+
+**Express** is Fast, unopinionated, minimalist web framework for Node.js, provides a layer of abstraction on top of the
+**http** module in **Nodejs**, and it's easy to learn and fun to use.
+
+## Building your first API with express
+
+### Creating an express project:
+
+First check out if **Node** is installed in your machine by using this command
+
+```bash:bash
+node -v
+```
+
+Then to get started create a new folder, and start a terminal session in this folder .
+
+Create a package.json file
+
+```bash:bash
+npm init
+```
+
+Install **expressjs** packgae
+
+```bash:bash
+npm i express
+```
+
+And create an index.js file where you code will execute
+
+```bash:bash
+touch index.js
+```
+
+and open it with your favourite code editor.
+
+### Requiring the **Express** module:
+
+In the top of your **index.js** file require the **express** module and store it in a constant called express then store
+this constant in an other constant called **app**
+
+```js:index.js
+const express = require('express')
+const app = express()
+```
+
+### Create a listener
+
+Like the **http** module we need a listener to listen to a giveen port
+
+```js:index.js
+app.listen(5000)
+```
+
+### Create some data:
+
+In this article we're not going to use a real database to keep the article short and simple so we are going store our data
+in memory keep in mind that in real world application we're not going to store data in memory we use databases.
+
+```js:index.js
+let users = [
+  { id: 1, name: 'Mohamed Achaq' },
+  { id: 2, name: 'Bojack Horseman' },
+  { id: 3, name: 'Rick Sanchez' },
+]
+```
+
+### Handling GET requests:
+
+With **Express** handling **GET** request is very simple, we use the **app.get()** method that takes two arguments
+the first argument is the route and the second is a callback function that takes a request and a response as arguments.
+
+```js:index.js
+// GET all the users
+app.get('/api/users', (req, res) => {
+  res.send(users)
+})
+```
+
+### Handling GET requests by parametres:
+
+When we want to get a specific element in our case to get single user by giveen id we use the id param in our **GET**
+handler
+
+```js:index.js
+// GET user by id
+app.get('/api/users/:id', (req, res) => {
+  let user = users.find((user) => user.id === parseInt(req.params.id))
+  if (!user) {
+    res.status(404).send('user not found')
+    return
+  }
+  res.send(user)
+})
+```
+
+in this example we have used the id param to get a user with matching id and if the user dosn't exist we return "user not found"
+with status code of **404**
+
+### Handling POST requests:
+
+There is a rule when dealing with user input, **_Never trust user input_** , so in the next following request we will
+use some form of validation and for this purpose there is a very famous open source package called **Joi**.
+
+To get started with **Joi** open a terminal session in the root directory of your project and run this:
+
+```bash:bash
+npm i joi
+```
+
+and require it in your project
+
+```js:index.js
+const Joi = require('joi')
+```
+
+and create a reusable validation function, and in this function we define schema to validate the user with the validate
+method
+
+```js:index.js
+// Validation Function
+const validateUser = (user) => {
+  const schema = Joi.object({
+    name: Joi.string().min(3).required(),
+  })
+  return schema.validate(user)
+}
+```
+
+now we can write our POST handler with input validation follow the [Joi Api Documentation](https://joi.dev/api/) to learn more .
+
+```js:index.js
+// POST requests
+app.post('/api/users', (req, res) => {
+  const { error } = validateUser(req.body)
+  if (error) {
+    res.status(400).send(error.details[0].message)
+    return
+  }
+  const user = {
+    id: users.length + 1,
+    name: req.body.name,
+  }
+  users.push(user)
+  res.send(user)
+})
+```
+
+in this example we first validate the request body and if the user is valid we push it to the array also the id is assigned automatically
+depending on how many users we have. And finally we send it back to the client.
+
+### Handling PUT requests:
+
+To handle the put request we're going to use the same validation function to validate the user input and the handeler will
+be something like this:
+
+```js:index.js
+// PUT request
+app.put('/api/users/:id', (req, res) => {
+  // Lookup the user
+  let user = users.find((user) => user.id === parseInt(req.params.id))
+  if (!user) {
+    res.status(404).send('user not found')
+    return
+  }
+  // validation
+  const { error } = validateUser(req.body)
+  if (error) {
+    res.status(400).send(error.details[0].message)
+    return
+  }
+  user.name = req.body.name
+  res.send(user)
+})
+```
+
+In this example first we lookup the user we want to update if dosn't exist we return "user not found " with a status code of **404**
+and in case the user exist we validate the request body and we assign the name property from the request body to the name property in the user
+object and we send it back to the client.
+
+### Handling DELETE requests:
+
+Finally to handle the **DELETE** request we will follow the same steps as the **POST** request and instad of pushing new object
+we delete it like this
+
+```js:index.js
+app.delete('/api/users/:id', (req, res) => {
+  // Lookup the user
+  let user = users.find((user) => user.id === parseInt(req.params.id))
+  if (!user) {
+    res.status(404).send('not found')
+    return
+  }
+  //   Delete the user with the giveen id
+  const userIndex = users.indexOf(user)
+  users.splice(userIndex, 1)
+  res.send(user)
+})
+```
+
+## Testing the endpoints:
+
+To test this endpoints you can use a **http client** like [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/) but I prefer to use
+a tool called [Paw](https://paw.cloud/) I find it very intutive to work with but you can chose which one you prefer and read the documentation to learn how to use it.
+
+## **Bonus** : Middleware
+
+Middleware functions are function that take 3 arguments the request and the response objects and the next middleware function
+and everytime the request-response cycle start the middleware function get executed in the request-response pipeline.
+and to use middleware function in express we use the **app.use(yourMiddleware)**.
+
+Express has some usefull built-in middleware function like this one
+
+```js:index.js
+app.use(express.json())
+```
+
+And it's used to parses incoming requests with JSON payloads and is based on [body-parser](http://expressjs.com/en/resources/middleware/body-parser.html).
+
+also you can make your own middleware functions, in the root directory of your project create a file called **customMiddleware.js**
+and require it your **index.js** and use it .
+
+```js:index.js
+const customMiddleware = require('./customMiddleware')
+```
+
+```js:customMiddleware.js
+app.use(customMiddleware)
+```
+
+inside this custom Middleware file add this function and export it
+
+```js:customMiddleware.js
+function myMiddleware(req, res, next) {
+  console.log("processing...");
+  next();
+}
+module.exports = myMiddleware;
+```
+
+basically this middleware will console log "processing..." everytime an request-response cycle starts.
+
+## Finally
+
+I hope you enjoyed this article catch you next time .

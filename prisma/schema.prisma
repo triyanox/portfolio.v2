@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_DEV")
+  referentialIntegrity = "prisma"
+}
+
+
+model Post {
+  id          Int @id @default(autoincrement())
+  slug        String  @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  views       Int @default(0)
+  likes       Int @default(0)
+}
+
+
