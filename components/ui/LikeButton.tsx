@@ -7,8 +7,8 @@ type LikeProps = {
 
 const Like = ({ slug }: LikeProps) => {
   const { mutate } = useSWRConfig();
-  const handleLike = () => {
-    fetch(`/api/posts/likes/${slug}`, {
+  const handleLike = async () => {
+    await fetch(`/api/posts/likes/${slug}`, {
       method: "POST",
     });
     mutate("/api/posts/likes/" + slug);
