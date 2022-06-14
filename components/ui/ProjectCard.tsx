@@ -33,17 +33,28 @@ const ProjectCard = (props: Props) => {
       initial="hidden"
       variants={{
         visible: {
+          translateY: 0,
           scale: 1,
+          opacity: 1,
           transformOrigin: "bottom",
           transition: {
-            duration: 0.3,
+            duration: 0.2,
             dump: 0.8,
             stiffness: 100,
             ease: "easeInOut",
           },
         },
         hidden: {
+          translateY: 100,
           scale: 0.6,
+          opacity: 0.2,
+          transformOrigin: "bottom",
+          transition: {
+            duration: 0.2,
+            dump: 0.8,
+            stiffness: 100,
+            ease: "easeInOut",
+          },
         },
       }}
       className="flex w-full items-center justify-start gap-4 rounded-[30px] "
