@@ -33,7 +33,7 @@ const item = {
 
 const ProjectCard = (props: Props) => {
   return (
-    <motion.div
+    <motion.li
       variants={item}
       className="flex w-full items-center justify-start gap-4 rounded-[30px] "
     >
@@ -99,7 +99,7 @@ const ProjectCard = (props: Props) => {
           </ul>
         </div>
       </div>
-    </motion.div>
+    </motion.li>
   )
 }
 
