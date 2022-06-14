@@ -88,15 +88,15 @@ const ProjectCard = (props: Props) => {
           <div className="text-md mb-1 flex  flex-col justify-start   text-gray-600 dark:text-gray-400 md:text-lg">
             {props.description}
           </div>
-          <div className="flex flex-row justify-start gap-3  text-2xl text-gray-600 dark:text-gray-400 md:text-3xl">
+          <ul className="flex flex-row justify-start gap-3  text-2xl text-gray-600 dark:text-gray-400 md:text-3xl">
             {props.stack.map((item, i) => {
               return (
-                <div className="flex items-center justify-center" key={i}>
+                <li className="flex items-center justify-center" key={i}>
                   {item()}
-                </div>
+                </li>
               )
             })}
-          </div>
+          </ul>
         </div>
       </div>
     </motion.div>
