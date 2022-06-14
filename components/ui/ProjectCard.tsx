@@ -11,23 +11,21 @@ interface Props {
   description: string
 }
 
+let easing = [0.6, -0.05, 0.01, 0.99]
+
 const item = {
   show: {
-    translateY: 0,
-    scale: 1,
+    y: 0,
     opacity: 1,
-    transformOrigin: 'bottom',
     transition: {
-      duration: 0.5,
-      dump: 0.8,
-      stiffness: 100,
-      ease: 'easeInOut',
+      duration: 0.6,
+      ease: easing,
     },
   },
   hidden: {
-    translateY: 100,
-    scale: 0,
+    y: 60,
     opacity: 0,
+    transition: { duration: 0.6, ease: easing },
   },
 }
 
