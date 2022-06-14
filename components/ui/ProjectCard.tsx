@@ -36,7 +36,7 @@ const ProjectCard = (props: Props) => {
           scale: 1,
           transformOrigin: "bottom",
           transition: {
-            duration: 0.5,
+            duration: 0.3,
             dump: 0.8,
             stiffness: 100,
             ease: "easeInOut",
