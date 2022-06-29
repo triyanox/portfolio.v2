@@ -1,15 +1,15 @@
-import MenuToggle from "./MenuToggle";
-import ThemeToggle from "./ThemeToggle";
+import MenuToggle from './MenuToggle'
+import ThemeToggle from './ThemeToggle'
 
 const Header = () => {
   return (
-    <header className="px-2 w-full md:px-12 pt-2 fixed z-50">
-      <nav className="w-full backdrop-blur-2xl rounded-full flex px-4 sm:px-8 md:px-12 py-3 justify-between items-center">
+    <header className="fixed z-50 w-full px-2 pt-2 md:px-12">
+      <nav className="flex w-full items-center justify-between rounded-full px-4 py-3 backdrop-blur-2xl sm:px-4 md:px-12">
         <MenuToggle />
         <ThemeToggle />
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

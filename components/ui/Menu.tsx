@@ -1,38 +1,38 @@
-import Link from "next/link";
-import { useContext } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/router";
-import NextLink from "next/link";
-import { useMenu } from "../../lib/hooks/useMenu";
-import cn from "classnames";
+import Link from 'next/link'
+import { useContext } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+import NextLink from 'next/link'
+import { useMenu } from '../../lib/hooks/useMenu'
+import cn from 'classnames'
 
 interface NavItems {
-  href: string;
-  text: string;
+  href: string
+  text: string
 }
 
 function NavItem({ href, text }: NavItems) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const router = useRouter()
+  const isActive = router.asPath === href
 
   return (
     <NextLink href={href}>
       <a
         className={cn(
           isActive
-            ? "font-bold text-black dark:text-white"
-            : "text-zinc-600 dark:text-zinc-400 font-semibold",
-          "mb-4 p-2  "
+            ? 'font-bold text-black dark:text-white'
+            : 'font-semibold text-zinc-600 dark:text-zinc-400',
+          'mb-4 p-2  '
         )}
       >
         <span>{text}</span>
       </a>
     </NextLink>
-  );
+  )
 }
 
 function Menu() {
-  const { open } = useMenu();
+  const { open } = useMenu()
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -41,23 +41,23 @@ function Menu() {
             initial={{
               scale: 0,
               opacity: 0,
-              borderRadius: "999px",
+              borderRadius: '999px',
             }}
             animate={{
               scale: 1,
               opacity: 1,
-              borderRadius: "0px",
-              transformOrigin: "center",
+              borderRadius: '0px',
+              transformOrigin: 'center',
             }}
             exit={{
               scale: 0,
               opacity: 0,
-              borderRadius: "999px",
+              borderRadius: '999px',
             }}
             transition={{
-              duration: 0.5,
+              duration: 0.4,
               dump: 0.8,
-              ease: "easeInOut",
+              ease: 'easeInOut',
               stiffness: 100,
               elapsed: 1,
             }}
@@ -69,7 +69,7 @@ function Menu() {
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }
 
-export default Menu;
+export default Menu
