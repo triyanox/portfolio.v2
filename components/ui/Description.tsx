@@ -1,10 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, AnimatePresence } from 'framer-motion'
+import { ReactNode } from 'react'
 
 export type Description = {
-  text: String;
-  tools?: ReactNode[];
-};
+  text: String
+  tools?: ReactNode[]
+}
 export const Description = (props: Description) => {
   return (
     <AnimatePresence exitBeforeEnter>
@@ -14,7 +14,7 @@ export const Description = (props: Description) => {
         }}
         animate={{
           opacity: 1,
-          transformOrigin: "left",
+          transformOrigin: 'left',
         }}
         exit={{
           opacity: 0,
@@ -22,7 +22,7 @@ export const Description = (props: Description) => {
         transition={{
           duration: 0.5,
           dump: 0.8,
-          ease: "easeInOut",
+          ease: 'easeInOut',
           stiffness: 100,
           elapsed: 1,
         }}
@@ -38,12 +38,12 @@ export const Description = (props: Description) => {
             </p>
             <div className=" mt-4 flex flex-row justify-start gap-3 text-2xl text-gray-600 dark:text-gray-400 md:text-3xl">
               {props.tools.map((tool) => {
-                return tool;
+                return tool
               })}
             </div>
           </div>
         )}
       </motion.div>
     </AnimatePresence>
-  );
-};
+  )
+}
