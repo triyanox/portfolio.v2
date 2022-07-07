@@ -14,10 +14,12 @@ interface NavItems {
 function NavItem({ href, text }: NavItems) {
   const router = useRouter()
   const isActive = router.asPath === href
+  const { open, setOpen } = useMenu()
 
   return (
     <NextLink href={href}>
       <a
+        onClick={() => setOpen(!open)}
         className={cn(
           isActive
             ? 'font-bold text-black dark:text-white'
