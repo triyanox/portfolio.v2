@@ -3,88 +3,103 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-Thin.woff2") format("woff2"),
-    url("/fonts/Generator-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-BoldIt.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-UltraLight.woff2") format("woff2"),
-    url("/fonts/Generator-UltraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-Light.woff2") format("woff2"),
-    url("/fonts/Generator-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-Regular.woff2") format("woff2"),
-    url("/fonts/Generator-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-Medium.woff2") format("woff2"),
-    url("/fonts/Generator-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-Bold.woff2") format("woff2"),
-    url("/fonts/Generator-Bold.woff") format("woff");
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-ExtraBold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-SemiBold.woff2") format("woff2"),
-    url("/fonts/Generator-SemiBold.woff") format("woff");
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-RegularIt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-ExtraBoldIt.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-UltraBold.woff2") format("woff2"),
-    url("/fonts/Generator-UltraBold.woff") format("woff");
-  font-weight: 800;
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-ThinIt.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-Thin.woff2') format('woff2');
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Generator";
-  src: url("/fonts/Generator-Black.woff2") format("woff2"),
-    url("/fonts/Generator-Black.woff") format("woff");
-  font-weight: 900;
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-SemiBoldIt.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-LightIt.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wright Pro';
+  src: url('/fonts/WrightPro-Light.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 pre {
-  font-family: "Generator", monospace;
+  font-family: 'Wright Pro', monospace;
 }
 
 .token.comment,
@@ -142,8 +157,8 @@ pre {
   @apply text-green-500 dark:text-cyan-400;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   @apply text-gray-800 dark:text-gray-50;
 }
 
@@ -161,7 +176,7 @@ pre {
 }
 
 .rehype-code-title {
-  @apply px-5 py-3 text-sm text-zinc-900 bg-zinc-100  rounded-t-xl dark:text-zinc-50  dark:bg-zinc-800;
+  @apply rounded-t-xl bg-zinc-50 px-5 py-3 text-lg font-bold  text-zinc-900 first-letter:uppercase dark:bg-zinc-900  dark:text-zinc-50;
 }
 
 .rehype-code-title + pre {
@@ -169,12 +184,12 @@ pre {
 }
 
 .highlight-line {
-  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-cyan-500 dark:bg-gray-800;
+  @apply -mx-4 block border-l-4 border-cyan-500 bg-gray-100 px-4 dark:bg-gray-800;
 }
 
 /* Remove Safari input shadow on mobile */
-input[type="text"],
-input[type="email"] {
+input[type='text'],
+input[type='email'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -210,7 +225,7 @@ input[type="email"] {
 }
 
 .highlight-line {
-  @apply border-l-black dark:border-l-white bg-zinc-200 dark:bg-zinc-800;
+  @apply border-l-black bg-zinc-200 dark:border-l-white dark:bg-zinc-800;
 }
 
 .line-number::before {
