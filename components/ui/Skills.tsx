@@ -98,9 +98,7 @@ const Skills = () => {
               tools={[
                 <Javascript key={1} />,
                 <Typescript key={2} />,
-                <Go key={3} />,
                 <Nodedotjs key={4} />,
-                <Express key={5} />,
                 <Mongodb key={6} />,
                 <Postgresql key={7} />,
                 <MySql key={8} />,
