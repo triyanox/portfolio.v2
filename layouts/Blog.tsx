@@ -1,23 +1,23 @@
-import { Fragment, ReactNode, useState } from "react";
-import { MenuContext } from "../lib/hooks/useMenu";
-import Footer from "../components/ui/Footer";
-import Header from "../components/ui/Header";
-import Menu from "../components/ui/Menu";
-import AuthorCard from "../components/ui/AuthorCard";
-import SupportCard from "../components/ui/SupportCard";
-import { Post } from "../.contentlayer/generated";
-import Like from "../components/ui/LikeButton";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { Fragment, ReactNode, useState } from 'react'
+import { MenuContext } from '../lib/hooks/useMenu'
+import Footer from '../components/ui/Footer'
+import Header from '../components/ui/Header'
+import Menu from '../components/ui/Menu'
+import AuthorCard from '../components/ui/AuthorCard'
+import SupportCard from '../components/ui/SupportCard'
+import { Post } from '../.contentlayer/generated'
+import Like from '../components/ui/LikeButton'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 type BlogProps = {
-  children: ReactNode;
-  post: Post;
-};
+  children: ReactNode
+  post: Post
+}
 
 const Blog = ({ children, post }: BlogProps) => {
-  const [open, setOpen] = useState(false);
-  const router = useRouter();
+  const [open, setOpen] = useState(false)
+  const router = useRouter()
 
   return (
     <Fragment>
@@ -52,7 +52,7 @@ const Blog = ({ children, post }: BlogProps) => {
       </Head>
       <MenuContext.Provider value={{ open, setOpen }}>
         <Header />
-        <article className="prose-xl prose mx-auto px-6 w-full md:px-24 pb-24 gap-4 flex-col prose-code:rounded-2xl prose-code:text-zinc-900 prose-pre:rounded-2xl   prose-pre:bg-zinc-50 dark:prose-invert dark:prose-code:text-zinc-100  dark:prose-pre:bg-zinc-900 prose-pre:text-lg md:prose-pre:text-xl  lg:prose-2xl">
+        <article className="prose prose-lg mx-auto w-full flex-col gap-4 px-6 pb-24 prose-code:rounded-3xl prose-code:text-zinc-900   prose-pre:rounded-3xl prose-pre:bg-zinc-50 prose-pre:text-lg dark:prose-invert dark:prose-code:text-zinc-100 dark:prose-pre:bg-zinc-900 md:px-24 md:prose-pre:text-xl lg:prose-xl">
           {children}
           <AuthorCard />
           <SupportCard link={post.slug} />
@@ -62,6 +62,6 @@ const Blog = ({ children, post }: BlogProps) => {
         <Menu />
       </MenuContext.Provider>
     </Fragment>
-  );
-};
-export default Blog;
+  )
+}
+export default Blog
