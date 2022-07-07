@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
@@ -26,10 +26,10 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <body className="scroll-smooth bg-white antialiased  dark:bg-black">
+      <body className="relative scroll-smooth bg-white antialiased  dark:bg-black">
         <Main />
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }
