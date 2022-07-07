@@ -1,12 +1,12 @@
 ---
-title: "Docker : The basics"
+title: 'Docker : The basics'
 date: Apr 23 2022
 description: Learn the basics of Docker and Containers
-image: "/static/images/docker-the-basics.png"
-author: "Mohamed Achaq"
+image: '/static/images/docker-the-basics.png'
+author: 'Mohamed Achaq'
 tags:
-  - "Docker"
-  - "Containers"
+  - 'Docker'
+  - 'Containers'
 ---
 
 <Imagecomponent
@@ -97,13 +97,13 @@ Before going any further you need to install Docker on your machine.
 
 To build your image you need to run the following command:
 
-```bash:bash
+```bash:terminal
 docker build -t flask-docker-boilerplate .
 ```
 
 Then verify that the image was created by running the following command:
 
-```bash:bash
+```bash:terminal
 docker image ls
 ```
 
@@ -111,7 +111,7 @@ docker image ls
 
 To run this image you need to run the following command:
 
-```bash:bash
+```bash:terminal
 docker run -p 3000:5000 flask-docker-boilerplate
 ```
 
@@ -141,7 +141,7 @@ Now head over to your browser and go to http://localhost:3000/ and you should se
 
 To check out the logs of the container you need to run the following command:
 
-```bash:bash
+```bash:terminal
 docker container log flask-docker-boilerplate
 ```
 
@@ -160,7 +160,7 @@ First head over to the [Docker Hub website](https://hub.docker.com/) create an a
 
 Then you need to login to Docker Hub by running the following command:
 
-```bash:bash
+```bash:terminal
 docker login
 ```
 
@@ -170,7 +170,7 @@ Then you will be asked to enter your username and password.
 
 Then you need to tag your image with the name of your project and the version of your application.
 
-```bash:bash
+```bash:terminal
 docker tag flask-docker-boilerplate [your_docker_hub_username]/flask-docker-boilerplate:latest
 ```
 
@@ -178,7 +178,7 @@ docker tag flask-docker-boilerplate [your_docker_hub_username]/flask-docker-boil
 
 Finally you need to push your image to Docker Hub.
 
-```bash:bash
+```bash:terminal
 docker push [your_docker_hub_username]/flask-docker-boilerplate:latest
 ```
 
@@ -202,13 +202,13 @@ if __name__ == "__main__":
 
 Then rebuild the image by using the following command:
 
-```bash:bash
+```bash:terminal
 docker build -t flask-docker-boilerplate .
 ```
 
 Then push the image to Docker Hub by using the following command:
 
-```bash:bash
+```bash:terminal
 docker push [your_docker_hub_username]/flask-docker-boilerplate:latest
 ```
 
