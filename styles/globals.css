@@ -176,7 +176,7 @@ pre {
 }
 
 .rehype-code-title {
-  @apply text-md rounded-t-xl bg-zinc-50 px-5 py-3 font-bold text-zinc-900  first-letter:uppercase dark:bg-zinc-900 dark:text-zinc-50  md:text-lg;
+  @apply rounded-t-2xl bg-zinc-50 px-5 py-3 text-lg font-bold text-zinc-900  first-letter:uppercase dark:bg-zinc-900 dark:text-zinc-50;
 }
 
 .rehype-code-title + pre {
