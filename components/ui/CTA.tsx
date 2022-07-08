@@ -4,7 +4,7 @@ import { MdMarkEmailRead } from 'react-icons/md'
 
 const CTA = () => {
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-y-4 px-6 py-36 md:px-16 md:py-48 ">
+    <section className="flex w-full flex-col items-center justify-center gap-y-4 px-6 py-36 md:px-16 md:py-28 ">
       <div className="mx-24 flex w-full flex-col  items-center justify-center rounded-xl ">
         <h1 className="mb-8 text-2xl font-semibold text-zinc-800 dark:text-zinc-200">
           Want to work together ?
