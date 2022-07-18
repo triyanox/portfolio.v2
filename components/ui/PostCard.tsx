@@ -22,7 +22,7 @@ const PostCard = (props: Props) => {
   return (
     <div
       ref={ref}
-      className="transtion-all flex w-full items-center  justify-start gap-4 rounded-[30px] bg-zinc-50  ring-zinc-100 ring-offset-white duration-300 hover:!opacity-100 hover:ring-4 active:scale-95 group-hover:opacity-50 dark:bg-zinc-900 dark:ring-zinc-800 dark:ring-offset-black hover:dark:!opacity-100 dark:group-hover:opacity-50
+      className="transtion-all flex w-full items-center justify-start gap-4 rounded-[30px] bg-zinc-50 ring-zinc-100 ring-offset-white  duration-300 hover:!opacity-100 hover:shadow-md hover:ring-4 active:scale-95 group-hover:opacity-50 dark:bg-zinc-900 dark:shadow-zinc-700 dark:ring-zinc-800 dark:ring-offset-black hover:dark:!opacity-100 dark:group-hover:opacity-50
     "
     >
       <Link href={`/blog/${props.slug}`} passHref>

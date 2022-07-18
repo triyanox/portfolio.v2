@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="h-16 w-16 animate-gradient-xy rounded-full bg-gradient-to-br from-cyan-500 via-purple-500 to-blue-500 md:h-20 md:w-20" />
         <div className="flex flex-col items-start justify-center gap-1">
           <h1 className="text-lg font-bold md:text-2xl">Mohamed Achaq</h1>
-          <h2 className="text-lg font-semibold text-zinc-600 dark:text-zinc-400 md:text-2xl">
+          <h2 className="text-lg font-semibold text-black text-opacity-60 dark:text-white dark:text-opacity-60 md:text-2xl">
             Software Developer / Designer
           </h2>
         </div>
