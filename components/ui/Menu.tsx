@@ -63,7 +63,7 @@ function Menu() {
               stiffness: 100,
               elapsed: 1,
             }}
-            className="fixed top-0  bottom-0 z-40 m-0 flex h-screen w-full flex-col items-center justify-center bg-white bg-opacity-70 pt-12 text-4xl    font-light text-black backdrop-blur-xl dark:bg-black  dark:bg-opacity-70 dark:text-white dark:backdrop-blur-xl"
+            className="fixed top-0  bottom-0 z-40 m-0 flex h-screen w-full flex-col items-center justify-center bg-white pt-12 text-4xl    font-light text-black dark:bg-black  dark:text-white"
           >
             <NavItem href="/" text="Home" />
             <NavItem href="/blog" text="Blog" />
