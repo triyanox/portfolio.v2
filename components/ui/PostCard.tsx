@@ -26,7 +26,7 @@ const PostCard = (props: Props) => {
     "
     >
       <Link href={`/blog/${props.slug}`} passHref>
-        <a className="flex h-full w-full flex-col justify-center gap-2 p-8 ">
+        <a className="flex h-full w-full flex-col justify-start gap-2 p-8 ">
           <div className="flex w-full flex-col gap-4 ">
             <h1 className="w-full text-lg  font-semibold text-black dark:text-white md:text-xl ">
               {props.title}
@@ -38,6 +38,9 @@ const PostCard = (props: Props) => {
               <p>•</p>
               <p>{data && !error ? data + ' views' : <Loading />}</p>
             </div>
+            <h2 className="text-md w-full font-normal text-black text-opacity-60 dark:text-white dark:text-opacity-60 md:text-lg ">
+              {props.description}
+            </h2>
           </div>
         </a>
       </Link>
