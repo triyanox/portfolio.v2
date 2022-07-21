@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar {
+  display: none;
+}
+button:focus {
+  outline: none;
+}
+
 @font-face {
   font-family: 'Wright Pro';
   src: url('/fonts/WrightPro-BoldIt.woff2') format('woff2');
