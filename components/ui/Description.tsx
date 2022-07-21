@@ -26,17 +26,15 @@ export const Description = (props: Description) => {
           stiffness: 100,
           elapsed: 1,
         }}
-        className="flex w-full  flex-col items-start justify-center rounded-[30px] "
+        className="flex w-full flex-col items-start justify-center rounded-[30px] text-black dark:text-white "
       >
-        <p className="text-2xl font-medium text-gray-600 dark:text-gray-400 ">
-          {props.text}
-        </p>
+        <p className="text-2xl font-medium  ">{props.text}</p>
         {props.tools !== undefined && (
           <div>
-            <p className="mt-4 text-2xl font-medium text-gray-600 dark:text-gray-400 ">
+            <p className="mt-4 text-2xl font-medium  ">
               Tools I&apos;m using :
             </p>
-            <div className=" mt-4 flex flex-row justify-start gap-3 text-2xl text-gray-600 dark:text-gray-400 md:text-3xl">
+            <div className=" mt-4 flex flex-row justify-start gap-3 text-2xl  md:text-3xl">
               {props.tools.map((tool) => {
                 return tool
               })}
