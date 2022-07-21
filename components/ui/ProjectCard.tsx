@@ -83,10 +83,10 @@ const ProjectCard = (props: Props) => {
               )}
             </div>
           </div>
-          <div className="text-md mb-1 flex  flex-col justify-start   text-gray-600 dark:text-gray-400 md:text-lg">
+          <div className="text-md mb-1 flex  flex-col justify-start   text-zinc-700 dark:text-zinc-400 md:text-lg">
             {props.description}
           </div>
-          <ul className="flex flex-row justify-start gap-3  text-2xl text-gray-600 dark:text-gray-400 md:text-3xl">
+          <ul className="flex flex-row justify-start gap-3  text-2xl text-black dark:text-white md:text-3xl">
             {props.stack.map((item, i) => {
               return (
                 <li className="flex items-center justify-center" key={i}>
