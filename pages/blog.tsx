@@ -17,7 +17,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       description="Mohamed Achaq is a software engineer, designer, and artist based in Morocco. He specializes in designing and building full-stack web applications ."
       image="https://achaq.codes/static/images/achaq-codes-blog.png"
     >
-      <section className="flex w-full flex-col items-center justify-center gap-10 px-6 pt-36 md:gap-16 md:px-24 md:pt-40">
+      <section className="flex w-full flex-col items-center justify-center gap-10 px-6 pt-20 md:gap-16 md:px-24 md:pt-16">
         <div className="flex w-full flex-row items-center justify-start gap-4">
           <div className="flex flex-col items-start justify-center gap-1">
             <h1 className="text-xl font-bold md:text-2xl">Blog</h1>
