@@ -69,6 +69,18 @@ export const IconButton = (props: IconButton) => {
   )
 }
 
+export const IconButton2 = (props: IconButton) => {
+  return (
+    <button
+      aria-label={props.aria}
+      onClick={props.onclick}
+      className="rounded-full p-2 text-lg font-bold text-black ring-zinc-300 transition-all duration-300 hover:scale-105 hover:ring-4 active:scale-95  dark:text-white dark:ring-zinc-700 md:text-xl"
+    >
+      {props.icon}
+    </button>
+  )
+}
+
 type SubmitButton = {
   text: string
   sm?: boolean
