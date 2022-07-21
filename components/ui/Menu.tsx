@@ -1,10 +1,8 @@
-import Link from 'next/link'
-import { useContext } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from 'next/router'
-import NextLink from 'next/link'
-import { useMenu } from '../../lib/hooks/useMenu'
 import cn from 'classnames'
+import { AnimatePresence, motion } from 'framer-motion'
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import { useMenu } from '../../lib/hooks/useMenu'
 
 interface NavItems {
   href: string
