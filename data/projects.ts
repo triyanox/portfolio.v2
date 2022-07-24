@@ -82,6 +82,13 @@ const projects = [
     preview: '',
   },
   {
+    name: 'rscrypt',
+    description: 'rscrypt is a simple, fast, and secure encryption tool written in Rust',
+    tech: [Rust],
+    link: 'https://github.com/triyanox/rscrypt',
+    preview: '',
+  },
+  {
     name: 'Portfolio',
     description: 'My personal website',
     tech: [
