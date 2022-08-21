@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import NextImage from 'next/image'
 
 interface ImageProps {

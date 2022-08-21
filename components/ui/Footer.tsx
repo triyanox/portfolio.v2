@@ -1,11 +1,5 @@
-import {
-  SiLinkedin,
-  SiInstagram,
-  SiGithub,
-  SiTwitter,
-  SiYoutube,
-} from 'react-icons/si/index.js'
 import Link from 'next/link'
+import { SiGithub, SiTwitter } from 'react-icons/si/index.js'
 import { IconButton } from './Buttons'
 
 const Footer = () => {

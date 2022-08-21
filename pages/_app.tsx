@@ -1,8 +1,8 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "next-themes";
-import { AnimatePresence, motion } from "framer-motion";
-import { SWRConfig } from "swr";
+import { AnimatePresence, motion } from 'framer-motion'
+import { ThemeProvider } from 'next-themes'
+import type { AppProps } from 'next/app'
+import { SWRConfig } from 'swr'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -11,12 +11,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <motion.div
           key={router.route}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transformOrigin: "50% 50%" }}
-          exit={{ opacity: 0, transformOrigin: "center" }}
+          animate={{ opacity: 1, transformOrigin: '50% 50%' }}
+          exit={{ opacity: 0, transformOrigin: 'center' }}
           transition={{
             duration: 0.5,
             damping: 300,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             stiffness: 300,
           }}
         >
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </motion.div>
       </AnimatePresence>
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

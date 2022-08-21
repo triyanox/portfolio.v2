@@ -4,6 +4,7 @@
 
 body::-webkit-scrollbar {
   display: none;
+  scroll-behavior: smooth;
 }
 button:focus {
   outline: none;

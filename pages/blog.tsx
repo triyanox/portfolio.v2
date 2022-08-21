@@ -1,10 +1,10 @@
-import type { InferGetStaticPropsType } from 'next'
-import Page from '../layouts/Page'
-import { allPosts, Post } from '../.contentlayer/generated'
 import { format, parseISO } from 'date-fns'
-import PostCard from '../components/ui/PostCard'
 import { motion } from 'framer-motion'
+import type { InferGetStaticPropsType } from 'next'
 import { useState } from 'react'
+import { allPosts, Post } from '../.contentlayer/generated'
+import PostCard from '../components/ui/PostCard'
+import Page from '../layouts/Page'
 
 const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [searchValue, setSearchValue] = useState('')

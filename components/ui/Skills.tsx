@@ -1,27 +1,25 @@
+import { useState } from 'react'
 import { Description } from './Description'
-import { Option, OptionSelected } from './Option'
-import { useEffect, useState } from 'react'
 import {
-  Figma,
   Adobeillustrator,
   Adobephotoshop,
-  Nodedotjs,
-  Express,
-  Mongodb,
-  Javascript,
-  Typescript,
-  Graphql,
-  Reactdotjs,
   Css3,
-  Tailwindcss,
+  Figma,
+  Graphql,
   Html5,
-  Nextdotjs,
-  Sass,
-  Postgresql,
-  Go,
+  Javascript,
+  Mongodb,
   MySql,
+  Nextdotjs,
+  Nodedotjs,
+  Postgresql,
+  Reactdotjs,
   Rust,
+  Sass,
+  Tailwindcss,
+  Typescript,
 } from './Icons'
+import { Option, OptionSelected } from './Option'
 const Skills = () => {
   const [skill, setSkill] = useState('Frontend')
 

@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
-import CTA from "../components/ui/CTA";
-import Hero from "../components/ui/Hero";
-import Projects from "../components/ui/Projects";
-import Skills from "../components/ui/Skills";
-import Page from "../layouts/Page";
+import type { NextPage } from 'next'
+import CTA from '../components/ui/CTA'
+import Hero from '../components/ui/Hero'
+import Projects from '../components/ui/Projects'
+import Skills from '../components/ui/Skills'
+import Page from '../layouts/Page'
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <Projects />
       <CTA />
     </Page>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
