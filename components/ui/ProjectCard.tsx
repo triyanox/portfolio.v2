@@ -18,14 +18,13 @@ const item = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.2,
       ease: easing,
     },
   },
   hidden: {
     y: 60,
     opacity: 0,
-    transition: { duration: 0.6, ease: easing },
   },
 }
 
