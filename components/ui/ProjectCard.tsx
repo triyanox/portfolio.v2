@@ -11,15 +11,15 @@ interface Props {
   description: string
 }
 
-let easing = [0.6, -0.05, 0.01, 0.99]
+// let easing = [0.6, -0.05, 0.01, 0.99]
 
 const item = {
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.2,
-      ease: easing,
+      duration: 0.5,
+      // ease: easing,
     },
   },
   hidden: {
