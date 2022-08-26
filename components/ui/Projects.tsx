@@ -1,7 +1,7 @@
 import projects from '../../data/projects'
 import ProjectCard from './ProjectCard'
 import { useEffect } from 'react'
-import { motion, m, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 const container = {
@@ -35,7 +35,7 @@ const Projects = () => {
           </h2>
         </div>
       </div>
-      <m.ol
+      <motion.ol
         variants={container}
         initial="hidden"
         ref={ref}
@@ -52,7 +52,7 @@ const Projects = () => {
             description={project.description}
           />
         ))}
-      </m.ol>
+      </motion.ol>
     </section>
   )
 }

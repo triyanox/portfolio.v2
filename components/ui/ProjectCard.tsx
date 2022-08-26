@@ -1,7 +1,7 @@
 import { SiGithub } from 'react-icons/si/index.js'
 import { SiOpenlayers } from 'react-icons/si/index.js'
 import Link from 'next/link'
-import { LazyMotion, domAnimation, m } from "framer-motion"
+import { motion } from 'framer-motion'
 
 interface Props {
   title: string
@@ -11,15 +11,15 @@ interface Props {
   description: string
 }
 
-// let easing = [0.6, -0.05, 0.01, 0.99]
+let easing = [0.6, -0.05, 0.01, 0.99]
 
 const item = {
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      // ease: easing,
+      duration: 0.2,
+      ease: easing,
     },
   },
   hidden: {
@@ -30,8 +30,7 @@ const item = {
 
 const ProjectCard = (props: Props) => {
   return (
-
-    <m.li
+    <motion.li
       variants={item}
       className="flex w-full items-center justify-start gap-4 rounded-[30px] "
     >
@@ -97,7 +96,7 @@ const ProjectCard = (props: Props) => {
           </ul>
         </div>
       </div>
-    </m.li>
+    </motion.li>
   )
 }
 
