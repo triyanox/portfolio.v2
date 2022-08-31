@@ -2,6 +2,7 @@ import { SiGithub } from 'react-icons/si/index.js'
 import { SiOpenlayers } from 'react-icons/si/index.js'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { memo } from 'react'
 
 interface Props {
   title: string
@@ -28,7 +29,8 @@ const item = {
   },
 }
 
-const ProjectCard = (props: Props) => {
+// eslint-disable-next-line react/display-name
+const ProjectCard = memo((props: Props) => {
   return (
     <motion.li
       variants={item}
@@ -49,12 +51,7 @@ const ProjectCard = (props: Props) => {
                     className="group relative transition duration-300  hover:text-gray-600 active:skew-y-3 active:scale-90 dark:hover:text-gray-400"
                   >
                     <SiGithub />
-                    <span
-                      className="absolute -right-9 m-2 w-auto min-w-max origin-top scale-0 rounded-md
-                    bg-black p-2  text-xs font-bold 
-    text-white shadow-md 
-    transition-all duration-100 group-hover:scale-100 dark:bg-white dark:text-black"
-                    >
+                    <span className="absolute -right-9 m-2 w-auto min-w-max origin-top scale-0 rounded-md bg-black p-2  text-xs font-bold text-white shadow-md transition-all duration-100 group-hover:scale-100 dark:bg-white dark:text-black">
                       Source Code
                     </span>
                   </button>
@@ -98,6 +95,6 @@ const ProjectCard = (props: Props) => {
       </div>
     </motion.li>
   )
-}
+})
 
 export default ProjectCard

@@ -1,6 +1,6 @@
 import projects from '../../data/projects'
 import ProjectCard from './ProjectCard'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -14,7 +14,8 @@ const container = {
   },
 }
 
-const Projects = () => {
+// eslint-disable-next-line react/display-name
+const Projects = memo(() => {
   const controls = useAnimation()
   const [ref, inView] = useInView()
   useEffect(() => {
@@ -55,6 +56,6 @@ const Projects = () => {
       </motion.ol>
     </section>
   )
-}
+})
 
 export default Projects
