@@ -1,0 +1,78 @@
+---
+title: Bit Shifting
+date: Oct 02 2022
+description: Manipulating bits with bitshiftig techniques
+image: '/static/images/bitshifting.png'
+author: 'Mohamed Achaq'
+tags:
+  - 'Rust'
+  - 'Bitshift'
+  - 'Bitwise'
+  - 'Bit Manipulation'
+---
+
+<Imagecomponent
+  src={`/static/images/bitshifting.png`}
+  alt={`Manipulating bits with bitshiftig techniques`}
+  width={1920}
+  height={1080}
+/>
+
+## Bit Shifting
+
+Bit shifting is a the fastest way to multiply or divide a number by a power of 2 and used heavily in low level programming and cryptography.
+
+For example we want to multiply the number `16` by 2, fisrt we need to convert the number `16` to binary which is `00010000` and then we need to shift the bits to the left by 1 which is `00100000` and then we need to convert the binary back to decimal which is `32`.
+
+## Multiplication
+
+To multiply a number by a power of 2, shift the bits to the left by the power of 2.
+
+```rust
+let x = 5;
+let y = x << 2; // 5 * 2^2 = 20
+```
+
+## Division
+
+To divide a number by a power of 2, shift the bits to the right by the power of 2.
+
+```rust
+let x = 20;
+let y = x >> 2; // 20 / 2^2 = 5
+```
+
+## Square Root
+
+The square root of a number is the number that when multiplied by itself gives the original number, for example, the square root of 9 is 3 because 3 * 3 = 9.
+
+The process of calculating the square root of a number is to find the number that when multiplied by itself gives the original number. This is done by starting with 1 and then multiplying it by 2 until the result is greater than the original number. The last number that was multiplied by 2 is the square root of the original number.
+
+This process can be done by bit shifting. The number 1 is shifted to the left by the power of 2 until the result is greater than the original number. The last number that was shifted is the square root of the original number.
+
+```rust
+fn sqrt(x: u32) -> u32 {
+    let mut y = 1;
+    while y << 1 < x {
+        y <<= 1;
+    }
+    y
+}
+
+fn main() {
+    let num = 64;
+    println!("The square root of {} is {}", num, sqrt(num));
+} // The square root of 64 is 8
+```
+
+## Conclusion
+
+Bit shifting is a very useful tool in low level programming and cryptography and it's very useful when doing performance critical math operations.
+
+That's all for this post, I hope you enjoyed it and learned something new.
+
+## Resources
+
+- [Bitshift - Bitwise Operators](https://en.wikipedia.org/wiki/Bitwise_operation#Bit_shifts)
+
+- [Bitwise Operators](https://www.tutorialspoint.com/cprogramming/c_bitwise_operators.htm)
