@@ -29,7 +29,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <input
           type="text"
           onChange={(e) => setSearchValue(e.target.value)}
-          className=" w-full rounded-2xl bg-zinc-50 px-11 py-8 text-lg font-medium text-black placeholder-zinc-500 ring-zinc-100 transition duration-300 focus-within:outline-none hover:shadow-md hover:ring-4 focus:outline-none focus:ring-4 focus:ring-zinc-100 disabled:text-zinc-400 disabled:ring-0  group-hover:ring-2  group-hover:ring-zinc-500 group-focus:ring-2 group-focus:ring-zinc-800 dark:bg-zinc-900 dark:text-white dark:shadow-zinc-700 dark:ring-zinc-800 dark:ring-offset-black  dark:focus:ring-zinc-800  dark:disabled:text-zinc-500"
+          className="sticky top-0 z-10 w-full translate-y-4 rounded-2xl bg-zinc-50 px-11 py-8 text-lg font-medium text-black placeholder-zinc-500 shadow-[0_35px_30px_-7px] shadow-white ring-zinc-100 backdrop-blur-2xl transition-all duration-300 focus-within:outline-none hover:ring-4 focus:outline-none focus:ring-4 focus:ring-zinc-100 disabled:text-zinc-400 disabled:ring-0 group-hover:ring-2 group-hover:ring-zinc-500  group-focus:ring-2  group-focus:ring-zinc-800 dark:bg-zinc-900 dark:text-white dark:shadow-black dark:ring-zinc-800 dark:ring-offset-black  dark:focus:ring-zinc-800  dark:disabled:text-zinc-500"
           placeholder="Search"
         />
         <motion.div className="group my-4 grid w-full grid-cols-1 gap-4 lg:grid-cols-2  xl:grid-cols-3">
