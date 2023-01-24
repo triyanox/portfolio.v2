@@ -10,6 +10,9 @@ button:focus {
   outline: none;
 }
 
+-webkit-tap-highlight-color: transparent; /* for removing the highlight */
+
+
 @font-face {
   font-family: 'Wright Pro';
   src: url('/fonts/WrightPro-BoldIt.woff2') format('woff2');
