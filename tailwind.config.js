@@ -68,6 +68,7 @@ module.exports = {
         'body::-webkit-scrollbar': {
           display: 'none',
         },
+        'body::-webkit-tap-highlight-color' : 'transparent',
         'button:focus': { outline: 'none' },
       })
     }),
