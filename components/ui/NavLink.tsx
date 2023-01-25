@@ -24,7 +24,7 @@ export const NavLink = forwardRef(
               : ' text-black hover:bg-zinc-50 active:bg-zinc-100  dark:text-white hover:dark:bg-zinc-900 active:dark:bg-zinc-800'
           } ${
             router.asPath === props.href ? 'font-bold' : ''
-          } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-xl`}
+          } group flex w-full items-center gap-4 rounded-2xl px-2 py-2 text-xl`}
         >
           {props.icon}
           {props.text}
