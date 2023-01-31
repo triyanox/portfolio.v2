@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { IconFilledButton } from './Buttons'
 import { MdMarkEmailRead } from 'react-icons/md'
+import { IconFilledButton } from './Buttons'
 
 const CTA = () => {
   return (
@@ -9,7 +9,7 @@ const CTA = () => {
         <h1 className="mb-8 text-2xl font-semibold text-zinc-800 dark:text-zinc-200">
           Want to work together ?
         </h1>
-        <Link href="mailto:contact@achaq.codes" passHref>
+        <Link href="mailto:contact@achaq.dev" passHref>
           <a>
             <IconFilledButton
               icon={<MdMarkEmailRead className="text-3xl" />}

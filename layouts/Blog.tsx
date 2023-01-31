@@ -1,14 +1,14 @@
-import { Fragment, ReactNode, useState } from 'react'
-import { MenuContext } from '../lib/hooks/useMenu'
-import Footer from '../components/ui/Footer'
-import Header from '../components/ui/Header'
-import Menu from '../components/ui/Menu'
-import AuthorCard from '../components/ui/AuthorCard'
-import SupportCard from '../components/ui/SupportCard'
-import { Post } from '../.contentlayer/generated'
-import Like from '../components/ui/LikeButton'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { Fragment, ReactNode, useState } from 'react'
+import { Post } from '../.contentlayer/generated'
+import AuthorCard from '../components/ui/AuthorCard'
+import Footer from '../components/ui/Footer'
+import Header from '../components/ui/Header'
+import Like from '../components/ui/LikeButton'
+import Menu from '../components/ui/Menu'
+import SupportCard from '../components/ui/SupportCard'
+import { MenuContext } from '../lib/hooks/useMenu'
 
 type BlogProps = {
   children: ReactNode
@@ -25,27 +25,18 @@ const Blog = ({ children, post }: BlogProps) => {
         <title>{post.title} | Mohamed Achaq</title>
         <meta name="robots" content="follow, index" />
         <meta content={post.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://achaq.codes${router.asPath}`}
-        />
-        <link rel="canonical" href={`https://achaq.codes${router.asPath}`} />
+        <meta property="og:url" content={`https://achaq.dev${router.asPath}`} />
+        <link rel="canonical" href={`https://achaq.dev${router.asPath}`} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Mohamed Achaq" />
         <meta property="og:description" content={post.description} />
         <meta property="og:title" content={post.title} />
-        <meta
-          property="og:image"
-          content={`https://achaq.codes${post.image}`}
-        />
+        <meta property="og:image" content={`https://achaq.dev${post.image}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ac__haq" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.description} />
-        <meta
-          name="twitter:image"
-          content={`https://achaq.codes${post.image}`}
-        />
+        <meta name="twitter:image" content={`https://achaq.dev${post.image}`} />
         {post.date && (
           <meta property="article:published_time" content={post.date} />
         )}

@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <Page
       title="Mohamed Achaq | Software Engineer, Designer, and Artist"
       description="Mohamed Achaq is a software engineer, designer, and artist based in Morocco. He specializes in designing and building full-stack web applications ."
-      image="https://achaq.codes/static/images/achaq-codes-hero.png"
+      image="https://achaq.dev/static/images/achaq-codes-hero.png"
     >
       <Hero />
       <Skills />

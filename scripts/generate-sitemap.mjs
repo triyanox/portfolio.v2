@@ -30,7 +30,7 @@ async function generate() {
             const route = path === '/index' ? '' : path
             return `
               <url>
-                  <loc>${`https://achaq.codes${route}`}</loc>
+                  <loc>${`https://achaq.dev${route}`}</loc>
                   <lastmod>${new Date().toISOString()}</lastmod>
                   <priority>1.0</priority>
               </url>

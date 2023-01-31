@@ -1,6 +1,6 @@
-import { IconFilledButton } from './Buttons'
-import { MdMarkEmailRead, MdArticle } from 'react-icons/md'
 import Link from 'next/link'
+import { MdArticle, MdMarkEmailRead } from 'react-icons/md'
+import { IconFilledButton } from './Buttons'
 
 const Hero = () => {
   return (
@@ -21,7 +21,7 @@ const Hero = () => {
           love to discover and learn new technologies.
         </p>
         <div className="flex items-center justify-start gap-4">
-          <Link href="mailto:contact@achaq.codes" passHref>
+          <Link href="mailto:contact@achaq.dev" passHref>
             <a>
               <IconFilledButton
                 icon={<MdMarkEmailRead className="text-3xl" />}

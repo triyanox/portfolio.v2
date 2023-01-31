@@ -1,34 +1,31 @@
-import { Fragment, ReactNode, useState } from "react";
-import { MenuContext } from "../lib/hooks/useMenu";
-import Footer from "../components/ui/Footer";
-import Header from "../components/ui/Header";
-import Menu from "../components/ui/Menu";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { Fragment, ReactNode, useState } from 'react'
+import Footer from '../components/ui/Footer'
+import Header from '../components/ui/Header'
+import Menu from '../components/ui/Menu'
+import { MenuContext } from '../lib/hooks/useMenu'
 
 type PageProps = {
-  children: ReactNode;
-  title: string;
-  description: string;
-  image?: string;
-  date?: string;
-};
+  children: ReactNode
+  title: string
+  description: string
+  image?: string
+  date?: string
+}
 
 const Page = ({ children, title, description, image, date }: PageProps) => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <Fragment>
       <Head>
         <title>{title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://achaq.codes${router.asPath}`}
-        />
-        <link rel="canonical" href={`https://achaq.codes${router.asPath}`} />
+        <meta property="og:url" content={`https://achaq.dev${router.asPath}`} />
+        <link rel="canonical" href={`https://achaq.dev${router.asPath}`} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Mohamed Achaq" />
         <meta property="og:description" content={description} />
@@ -48,6 +45,6 @@ const Page = ({ children, title, description, image, date }: PageProps) => {
         <Menu />
       </MenuContext.Provider>
     </Fragment>
-  );
-};
-export default Page;
+  )
+}
+export default Page
