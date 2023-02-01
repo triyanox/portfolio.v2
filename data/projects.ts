@@ -26,21 +26,6 @@ const projects = [
     preview: 'https://socials.achaq.dev',
   },
   {
-    name: 'Plana',
-    description: 'An application for managing tasks and staying on track',
-    tech: [
-      Typescript,
-      Reactdotjs,
-      Nextdotjs,
-      Nodedotjs,
-      MySql,
-      Prisma,
-      Tailwindcss,
-    ],
-    link: 'https://github.com/triyanox/plana',
-    preview: 'https://plana.achaq.dev',
-  },
-  {
     name: 'rsmdc',
     description: 'A markdown to HTML parser written in Rust',
     tech: [Rust],
